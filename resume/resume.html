@@ -2,12 +2,561 @@
 <head>
     <script src="http://db2c8u89pdczb.cloudfront.net/jquery/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link href="/resume.css" rel="stylesheet" type="text/css">
+    <style>
+	@font-face { font-family: Archer-Medium; src: url('Archer-Medium.ttf'); } 
+html
+{
+    height: 100%;
+    float: left;
+    width: 100%;
+}
+body
+{
+	height: 100%;
+    float: left;
+    width: 100%;
+    background-color: #000;
+    margin: 0px;
+    padding: 0px;
+}
+.parentDiv 
+{
+    background-color: #615d5d;
+    height: 100%;
+    float: left;
+    width: 100%;
+	border-radius: 9%;
+}
+.wishesDiv 
+{
+    font-family: Archer-Medium;
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    top: -webkit-calc(50% - 20px);
+    width: 100%;
+	color: #fff;
+    text-align: center;
+}
+.transformClass
+{
+	transform: rotate(7deg);
+	transition: transform 2s;
+}
+.resume_ball,.contentDiv,.contentDiv1,.contentDiv2,.contentDiv3,.contentDiv4,.projectDiv
+{
+    height: 30px;
+    border-radius: 50%;
+    width: 30px;
+    background-color: #d4cdcd;
+    position: absolute;
+    left:50%;
+    float: left;
+	display:none
+}
+.contentDiv,.contentDiv1,.contentDiv2,.contentDiv3,.contentDiv4,.projectDiv
+{
+	background-color: #000;
+	height: 1px;
+	width: 1px;
+	display:block;
+	border-radius: 45%;
+}
+.resume_ball.fillPage
+{
+	transform: none !important;
+	height: 100%;
+	width: 100%;
+	position: initial;
+}
+.contactDet,.currentInfo
+{
+	text-align: initial;
+	font-size: 0px;
+	border: 3px solid #000;
+	padding: 10px;
+	top: 50%;
+	height:0px;
+	width:0px;
+	position: absolute;
+	display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: center;
+}
+.currentInfo
+{
+	right: 0px;
+}
+.contactDetHead,.currentComp
+{
+	font-weight: bold;
+	margin-bottom:10px;
+}
+.summaryCont
+{
+	left: 50%;
+	top: 0px;
+	border-radius: 50%;
+	background: #000;
+    box-sizing: border-box;
+	
+}
+.revolveDiv
+{
+	height: 0%;
+    width: 0%;
+    left: 50%;
+    top: 50%;
+    background: #fff;
+    position: absolute;
+}
+.footerContact
+{
+	float: left;
+    position: absolute;
+    top: 97%;
+    left: -webkit-calc(100% - 387px);
+    font-size: 11px;
+    font-family: cursive;
+    color: #000;
+    text-align: right;
+	font-weight: bold;
+	background-color: #fff;
+}
+.section1,.section2,.section3
+{
+	position: relative;
+    margin: 0px auto;
+    height: 350px;
+    top: -webkit-calc(50% - 175px);
+    background-color: #000;
+    z-index: 99;
+    min-width: 350px;
+	width: 30%;
+	-webkit-transition: left 2s, top 2s, -webkit-transform 2s;
+    transition: left 2s, top 2s, transform 2s;
+	display:none;
+    align-items: center;
+    justify-content: center;
+	
+}
+.content
+{
+	width: 20px;
+    height: 20px;
+    border-radius: 140px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+}
+.acadCont,.yMeCont,.officeCont,.respCont
+{
+	width: 200px;
+    position: relative;
+    margin: 0px auto;
+    margin-top: 40px;
+	display: none;
+    box-sizing: border-box;
+}
+.officeCont
+{
+	width: 130px;
+}
+.respCont
+{
+	width: 310px;
+}
+.acadTitle,.yMe,.officeTitle,.respTitle
+{
+	float: left;
+    font-size: 20px;
+    width: 100%;
+    color: #fff;
+    font-family: cursive;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.acadDetails,.yMeList,.respList,.officeDetails
+{
+    font-size: 14px;
+    color: #fff;
+    font-family: cursive;
+}
+.acadDetails div,.yMeList div
+{
+	margin-bottom: 20px;
+}
+.respList div
+{
+	margin-bottom: 10px;
+}
+.rotateDiv
+{
+	-webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+	float: left;
+	left:0px;
+	top:0px;
+}
+.section2.rotateDiv
+{
+	right:0px;
+	top:0px;
+	float: right;
+}
+.section3.rotateDiv
+{
+	float: left;
+	bottom: 0px;
+
+}
+.mainContents
+{
+	width: 1000px;
+    height: 700px;
+}
+.triangle
+{
+	width: 0;
+    position: absolute;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 43px solid #231515;
+    top: -23px;
+    left: -webkit-calc(50% - 50px);
+}
+.contentDiv4 .contents
+{
+	color: #fff;
+    margin-top: 20px;
+    text-align: center;
+	font-family: cursive;
+}
+.projectDiv
+{
+	float: left;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    top: 0px;
+    left: 50%;
+}
+.opacity
+{
+	opacity : 0.5;
+}
+.projectSubDiv
+{position: absolute;
+    width: 500px;
+    top: -webkit-calc(50% - 250px);
+    height: 500;
+    background-color: #fff;
+    border-radius: 25%;
+    left: -webkit-calc(50% - 250px);
+}
+.topic {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    font-family: Archer-Medium;
+    padding-left: 36px;
+}
+.cont {
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-right: 20px;
+    font-family: Archer-Medium;
+    font-size: 12px;
+	font-weight: bold;
+}
+.hover
+{
+	    background-color: #000;
+    font-size: 15px;
+    height: 100%;
+    border-radius: 48%;
+    text-align: center;
+    opacity: 0.5;
+    width: 100%;
+    position: absolute;
+    color: #fff;
+}
+.hovertxt
+{
+	background-color: #000;
+    font-size: 15px;
+	background: #fff;
+    top: 50%;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+	font-weight: bold;
+    font-family: cursive;
+    color: #000;
+}
+.techused
+{
+	padding: 10px;
+    color: #fff;
+    border-radius: 0;
+    background-color: #231515;
+}
+.projectSubDiv .footerContact
+{
+	top: 90%;
+    left: 72px;
+}
+
+	</style>
 </head>
 <body>
 	<div class="parentDiv">
     	<div class="resume_ball"></div>
 	</div> 
 </body>
- <script src="https://raw.githubusercontent.com/vennilamahalingam/resume/master/resume/resume.js" type="text/javascript"></script>
+ <script type="text/javascript">
+ /*function showWish()
+{*/
+    var today = new Date();
+    var time = today.getHours();
+    var YVal,XVal,X;
+    var wish;
+    if(time < 12)
+        wish = "GOOD MORNING !!!";
+    else if(time >= 12 && time < 18)
+        wish = "GOOD AFTERNOON !!!";
+    else if(time >= 18)
+        wish = "GOOD EVENING !!!";
+    $(".parentDiv").append('<div class="wishesDiv">'+wish+'<div>');
+    setTimeout(function()
+    {
+        $("body").css("background-color",'#fff');
+        $('.resume_ball').show();
+		var hoverEl = '<div class="hover"></div><div class="hovertxt">hover to view</div>';
+        setTimeout(function()
+        {
+            /*for(var i=0; i<170; i++)
+            {
+                $('.resume_ball').css("transform","translate(0px,"+(i+102)+"px)");
+                YVal = (i+102);
+            }*/
+			$('.resume_ball').animate({
+										top : ""+($('.resume_ball').parent().height()/2) - 40
+									},800)
+            setTimeout(function()
+            {
+				$(".wishesDiv").addClass('transformClass');
+                setTimeout(function()
+                {
+                    $('.resume_ball').animate({
+										left: '57%',
+										top: '+=10px'
+									},800)
+                    setTimeout(function()
+                    {
+							$('.resume_ball').animate({
+									top : ""+$('.resume_ball').parent().height() - 30,
+									left : '80%'
+								},1000)
+                        setTimeout(function()
+                        {
+                            $('.resume_ball').animate({ 
+														'transform': 'none !important',
+														'height': '100%',
+														'width': '100%',
+														'position': 'initial',
+													    'top':'0px',
+														'left':'0px',
+														'borderRadius':'25%'
+														},1000)
+                            $(".wishesDiv").remove();
+							setTimeout(function()
+							{
+								var htmlEle = '<div class="contentDiv bubbles"><div class="contents"><div class="section"><div class="acadCont"><div class="acadTitle">My Academics</div><div class="acadDetails"><div>-Bachelor of Information Technology, Karpagam college of engineering, Coimbatore (Secured 9 CGPA).</div>  <div>-Class 12th (Computer Science Stream with Mathematics)securing 92%.</div>  <div>- Class 10th securing 90%. </div></div></div></div></div></div>';
+								$('.resume_ball').prepend(htmlEle);   
+								
+								var htmlEle = '<div class="parentEl"><div class="footerContact"><div class="name">Vennila Mahalingam : 7094054614 : vennilamahalingam.vm@gmail.com</div></div></div>';
+								$(htmlEle).insertAfter('.parentDiv');
+								$('.contentDiv').animate(
+								{
+									bottom:'35%',
+									width:'250px',
+									height:'325px',
+									left: '0px'
+								},3000,
+								function(){$('.contentDiv').addClass('opacity');$('.acadCont').prepend(hoverEl);})
+								
+									$('.contentDiv').hover(function()
+									{
+										$('.contentDiv').removeClass('opacity');
+										$('.contentDiv').css('z-index','9');
+										$('.acadCont .hover,.acadCont .hovertxt').hide();
+									},
+									function()
+									{
+										$('.contentDiv').addClass('opacity');
+										$('.contentDiv').css('z-index','0');
+										$('.acadCont .hover,.acadCont .hovertxt').show();
+									});
+								setTimeout(function()
+								{
+									$(".acadCont").delay(1000).fadeIn();
+									
+									setTimeout(function()
+									{
+										var htmlEle = '<div class="contentDiv1 bubbles"><div class="contents"><div class="section"><div class="officeCont"><div class="officeTitle">Current job</div><div class="officeDetails"><div>-Working at skava systems, an Infosys company</div>  <div>-since june 2015</div>  <div>- As a software engineer.</div></div></div></div></div></div>';
+										$('.resume_ball').prepend(htmlEle);   
+										$('.contentDiv1').animate(
+										{
+											bottom:'25%',    
+											width: '200px',
+											height: '250px',
+											left: '20%'
+										},3000,function(){$('.contentDiv1').addClass('opacity');
+										$('.officeCont').prepend(hoverEl);})
+										
+										$('.contentDiv1').hover(function()
+										{
+											$('.contentDiv1').removeClass('opacity');
+											$('.contentDiv1').css('z-index','9');
+			
+										$('.officeCont .hover,.officeCont .hovertxt').hide();
+										},
+										function()
+										{
+											$('.contentDiv1').addClass('opacity');
+											$('.contentDiv1').css('z-index','0');
+											
+										$('.officeCont .hover,.officeCont .hovertxt').show();
+											});
+										setTimeout(function()
+										{
+											$(".officeCont").delay(1000).fadeIn();
+											
+											setTimeout(function()
+											{
+												var htmlEle = '<div class="contentDiv2 bubbles"><div class="contents"><div class="section"><div class="yMeCont"><div class="yMe">Why me:</div> <div class="yMeList"><div>- I have good communication skills (verbal and written)</div> <div>-Quick and self learner</div> <div>-Ability to work with pressure situations.</div> <div>-Always up to face challenges</div></div></div></div></div></div>';
+												$('.resume_ball').prepend(htmlEle);   
+												$('.contentDiv2').animate(
+												{
+													bottom:'10%',    
+													width:'250px',
+													height:'325px',
+													left: '40%'
+												},3000,function(){$('.contentDiv2').addClass('opacity');$('.yMeCont').prepend(hoverEl)})
+												
+												$('.contentDiv2').hover(function()
+												{
+													$('.contentDiv2').removeClass('opacity');
+													$('.contentDiv2').css('z-index','9');
+													
+										$('.yMeCont .hover,.yMeCont .hovertxt').hide();
+												},
+												function()
+												{
+													$('.contentDiv2').addClass('opacity');
+													$('.contentDiv2').css('z-index','0');
+													
+										$('.yMeCont .hover,.yMeCont .hovertxt').show();
+												});
+												setTimeout(function()
+												{
+													$(".yMeCont").delay(1000).fadeIn();
+													
+													setTimeout(function()
+													{
+														var htmlEle = '<div class="contentDiv3 bubbles"><div class="contents"><div class="section"><div class="respCont"><div class="respTitle">My Current Responsibilities</div><div class="respList"><div>-Analyzing the business requirements and functional specifications to provide the estimate.</div><div>-Allocating the resources for the modules of the project to be worked on.</div><div>-Providing guidance to my team(2 members) based on the interaction with client on calls.</div><div>-Working on project making sure the pages are designed as per the comp provided by the client.</div><div>-Reviewing the code of team resources for optimization.</div><div>-Delivering and implementing the projects on scheduled time.</div><div>-Interacting with client on further changes/ mainteinance via mail/calls.</div></div></div></div></div></div>';
+														$('.resume_ball').prepend(htmlEle);   
+														$('.contentDiv3').animate(
+														{
+															bottom:'10%',    
+															width:'400px',
+															height:'510px',
+															left: ''+$('.contentDiv3').parent().width() - 400
+														},3000,function(){$('.contentDiv3').addClass('opacity');$('.respCont').prepend(hoverEl)})
+																			
+														$('.contentDiv3').hover(function()
+														{
+															$('.contentDiv3').removeClass('opacity');
+															$('.contentDiv3').css('z-index','9');
+															
+										$('.respCont .hover,.respCont .hovertxt').hide();
+														},
+														function()
+														{
+															$('.contentDiv3').addClass('opacity');
+															$('.contentDiv3').css('z-index','0');
+															
+										$('.respCont .hover,.respCont .hovertxt').show();
+														});
+														setTimeout(function()
+														{
+															$(".respCont").delay(1000).fadeIn();
+															setTimeout(function()
+															{
+																var htmlEle = '<div class="contentDiv4"><div class="triangle"></div><div class="contents">click here to view my key projects</div></div>';
+																$('.resume_ball').prepend(htmlEle);
+																$('.contentDiv4').animate(
+																{
+																	top:'20px',
+																	width:'200px',
+																	height: '70px',
+																	left: ''+($('.contentDiv4').parent().width()/2) - 100
+																},3000)
+																//registerClick();
+																$('.contentDiv4').off('click').on('click',function(){
+																	$('.contentDiv4').animate({
+																		width: '100%',
+																		left: '0px',
+																		height:'100%',
+																		top: '0px',
+																		color: '#f7f1f1'
+																	},3000)
+																	$('.bubbles,.triangle,.contents').remove();
+																	setTimeout(function()
+																	{
+																		$(".contentDiv4").unbind();
+																		var htmlEl = '<div class="projectDiv boxes"></div><div class= "projectSubDiv"></div>';
+																		jQuery('.contentDiv4').append(htmlEl)
+																		$('.projectDiv').animate(
+																		{
+																			'top':'50%',
+																			'left': '50%'
+																		},3000)
+																		setTimeout(function(){
+																			var htmlEl = '<div class="topic">Store Locator</div><div class="cont">This module enables user to Look up the stores near by using google location detecting and set the same as their own store. It is done for both mobile and tablet user experience.</div><div class="topic">Express Checkout:</div><div class="cont">This section is from adding the product to cart untill getting the order confirmed including payment section. It differs from full checkout in that this provides shipping address, billing, payments, promo, gift card sections in single page which was rather challenging.</div><div class="topic">Full checkout</div><div class="cont">This is the four step process of getting the product checked out and confirming the order. This was done for two regions.</div><div class="topic">TRU Next:</div><div class="cont">Creating widgets using FTL and JavaScript. Used Skava Studio Tool to upload the widgets and enabling server side rendering</div>'
+																			var htmlEl1 = "<div class='techused'><div class='topic'>Technologies used</div><div class='cont'>Apache ant, HTML, JavaScript, jQuery, Angular Js, CSS3, SASS, Handlebars, FTL, Backbone.js,JSON, XML.</div></div>"
+																			jQuery('.projectSubDiv').append(htmlEl1);
+																			setTimeout(function(){
+																				
+																				jQuery('.projectSubDiv').append(htmlEl);
+																				$('.projectSubDiv').append(jQuery('.footerContact').clone())
+																			},3000)
+																		},3000)
+																	},3000)
+																})
+															},3000)
+														},1000)
+													},3000)
+												},1000)
+											},3000)
+										},1000)
+									},3000);
+								},1000);
+							},3000);
+                        },1000);
+                    },1000);
+                },1000)
+            },1000);
+        }, 1000);
+    },1000);
+/*}*/
+/*$(document).on('ready',function(
+{
+   showWish(); 
+});
+*/
+</script>
 </html>
