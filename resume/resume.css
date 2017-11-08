@@ -1,0 +1,305 @@
+@font-face { font-family: Archer-Medium; src: url('Archer-Medium.ttf'); } 
+html
+{
+    height: 100%;
+    float: left;
+    width: 100%;
+}
+body
+{
+	height: 100%;
+    float: left;
+    width: 100%;
+    background-color: #000;
+    margin: 0px;
+    padding: 0px;
+}
+.parentDiv 
+{
+    background-color: #615d5d;
+    height: 100%;
+    float: left;
+    width: 100%;
+	border-radius: 9%;
+}
+.wishesDiv 
+{
+    font-family: Archer-Medium;
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    top: -webkit-calc(50% - 20px);
+    width: 100%;
+	color: #fff;
+    text-align: center;
+}
+.transformClass
+{
+	transform: rotate(7deg);
+	transition: transform 2s;
+}
+.resume_ball,.contentDiv,.contentDiv1,.contentDiv2,.contentDiv3,.contentDiv4,.projectDiv
+{
+    height: 30px;
+    border-radius: 50%;
+    width: 30px;
+    background-color: #d4cdcd;
+    position: absolute;
+    left:50%;
+    float: left;
+	display:none
+}
+.contentDiv,.contentDiv1,.contentDiv2,.contentDiv3,.contentDiv4,.projectDiv
+{
+	background-color: #000;
+	height: 1px;
+	width: 1px;
+	display:block;
+	border-radius: 45%;
+}
+.resume_ball.fillPage
+{
+	transform: none !important;
+	height: 100%;
+	width: 100%;
+	position: initial;
+}
+.contactDet,.currentInfo
+{
+	text-align: initial;
+	font-size: 0px;
+	border: 3px solid #000;
+	padding: 10px;
+	top: 50%;
+	height:0px;
+	width:0px;
+	position: absolute;
+	display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: center;
+}
+.currentInfo
+{
+	right: 0px;
+}
+.contactDetHead,.currentComp
+{
+	font-weight: bold;
+	margin-bottom:10px;
+}
+.summaryCont
+{
+	left: 50%;
+	top: 0px;
+	border-radius: 50%;
+	background: #000;
+    box-sizing: border-box;
+	
+}
+.revolveDiv
+{
+	height: 0%;
+    width: 0%;
+    left: 50%;
+    top: 50%;
+    background: #fff;
+    position: absolute;
+}
+.footerContact
+{
+	float: left;
+    position: absolute;
+    top: 97%;
+    left: -webkit-calc(100% - 387px);
+    font-size: 11px;
+    font-family: cursive;
+    color: #000;
+    text-align: right;
+	font-weight: bold;
+	background-color: #fff;
+}
+.section1,.section2,.section3
+{
+	position: relative;
+    margin: 0px auto;
+    height: 350px;
+    top: -webkit-calc(50% - 175px);
+    background-color: #000;
+    z-index: 99;
+    min-width: 350px;
+	width: 30%;
+	-webkit-transition: left 2s, top 2s, -webkit-transform 2s;
+    transition: left 2s, top 2s, transform 2s;
+	display:none;
+    align-items: center;
+    justify-content: center;
+	
+}
+.content
+{
+	width: 20px;
+    height: 20px;
+    border-radius: 140px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+}
+.acadCont,.yMeCont,.officeCont,.respCont
+{
+	width: 200px;
+    position: relative;
+    margin: 0px auto;
+    margin-top: 40px;
+	display: none;
+    box-sizing: border-box;
+}
+.officeCont
+{
+	width: 130px;
+}
+.respCont
+{
+	width: 310px;
+}
+.acadTitle,.yMe,.officeTitle,.respTitle
+{
+	float: left;
+    font-size: 20px;
+    width: 100%;
+    color: #fff;
+    font-family: cursive;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.acadDetails,.yMeList,.respList,.officeDetails
+{
+    font-size: 14px;
+    color: #fff;
+    font-family: cursive;
+}
+.acadDetails div,.yMeList div
+{
+	margin-bottom: 20px;
+}
+.respList div
+{
+	margin-bottom: 10px;
+}
+.rotateDiv
+{
+	-webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+	float: left;
+	left:0px;
+	top:0px;
+}
+.section2.rotateDiv
+{
+	right:0px;
+	top:0px;
+	float: right;
+}
+.section3.rotateDiv
+{
+	float: left;
+	bottom: 0px;
+
+}
+.mainContents
+{
+	width: 1000px;
+    height: 700px;
+}
+.triangle
+{
+	width: 0;
+    position: absolute;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 43px solid #231515;
+    top: -23px;
+    left: -webkit-calc(50% - 50px);
+}
+.contentDiv4 .contents
+{
+	color: #fff;
+    margin-top: 20px;
+    text-align: center;
+	font-family: cursive;
+}
+.projectDiv
+{
+	float: left;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    top: 0px;
+    left: 50%;
+}
+.opacity
+{
+	opacity : 0.5;
+}
+.projectSubDiv
+{position: absolute;
+    width: 500px;
+    top: -webkit-calc(50% - 250px);
+    height: 500;
+    background-color: #fff;
+    border-radius: 25%;
+    left: -webkit-calc(50% - 250px);
+}
+.topic {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    font-family: Archer-Medium;
+    padding-left: 36px;
+}
+.cont {
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-right: 20px;
+    font-family: Archer-Medium;
+    font-size: 12px;
+	font-weight: bold;
+}
+.hover
+{
+	    background-color: #000;
+    font-size: 15px;
+    height: 100%;
+    border-radius: 48%;
+    text-align: center;
+    opacity: 0.5;
+    width: 100%;
+    position: absolute;
+    color: #fff;
+}
+.hovertxt
+{
+	background-color: #000;
+    font-size: 15px;
+	background: #fff;
+    top: 50%;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+	font-weight: bold;
+    font-family: cursive;
+    color: #000;
+}
+.techused
+{
+	padding: 10px;
+    color: #fff;
+    border-radius: 0;
+    background-color: #231515;
+}
+.projectSubDiv .footerContact
+{
+	top: 90%;
+    left: 72px;
+}
